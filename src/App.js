@@ -1,24 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from "./components/navbar"; 
+import Home from "./components/home";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import { Fragment } from 'react';
+import Achara from "./components/pages/achara/Achara";
+import Kakheti from "./components/pages/kakheti/kakheti";
+import Svaneti from "./components/pages/svaneti/svaneti";
+import Racha from "./components/pages/racha/racha";
+import Guria from "./components/pages/guria/guria";
+import Samegrelo from "./components/pages/samegrelo/samegrelo";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <Fragment>
+    <Router>     
+      <Switch>
+        <Route exact path="/" component={Home}></Route>
+        <Route  path="/home" component={Home}></Route>
+        <Route  path="/achara" component={Achara}></Route>
+        <Route  path="/kakheti" component={Kakheti}></Route>
+        <Route  path="/svaneti" component={Svaneti}></Route>
+        <Route  path="/racha" component={Racha}></Route>
+        <Route  path="/guria" component={Guria}></Route>
+        <Route  path="/samegrelo" component={Samegrelo}></Route>
+      </Switch>
+    </Router>
+  </Fragment>
   );
 }
 
